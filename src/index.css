@@ -1,13 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Josefin+Slab&family=Montserrat&family=Quicksand&family=Raleway&display=swap");
+
+/*  
+    font-family: 'Alfa Slab One', cursive;
+
+    font-family: 'Josefin Slab', serif;
+
+    font-family: 'Montserrat', sans-serif;
+font-family: 'Raleway', sans-serif;
+
+font-family: 'Quicksand', sans-serif;
+
+*/
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

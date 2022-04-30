@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Arvo&family=Josefin+Slab&family=Jost:wght@300;400&family=Montserrat&family=Quicksand&family=Raleway&display=swap");
+
+.card {
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 20px;
+  text-align: justify;
+  font-family: "Jost", sans-serif;
+  box-shadow: 0 0 10px rgb(192, 227, 245, 1);
+  background: white;
+}
+
+.card-active {
+  color: #b92022;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 30px 0;
+  font-family: "Arvo", serif;
+}
+
+.card-info {
+  font-size: 18px;
+  color: grey;
+}
+
+.card-button > button {
+  padding: 10px 30px;
+  background: white;
+  border: 2px solid #b92022;
+  border-radius: 3px;
+  margin: 20px 0px;
+  color: black;
+  font-family: "Montserrat";
+}
+
+.card-button-active > button {
+  padding: 11px 31px;
+  border: none;
+  border-radius: 3px;
+  margin: 20px 0px;
+  font-family: "Montserrat";
+  background: #b92022;
+  color: white;
+  cursor: pointer;
+}
+
+.card-button > button:hover,
+.card-button-active > button:hover {
+  box-shadow: 0 0 2px #b92022;
+}
+
+.card-button > button:focus,
+.card-button-active > button:focus {
+  outline: none !important;
+}
