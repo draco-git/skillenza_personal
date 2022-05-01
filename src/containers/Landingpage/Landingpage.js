@@ -3,9 +3,9 @@ import Card from "../../components/cards/Card";
 import Hero from "../../components/hero/Hero";
 import Navbar from "../../components/navbar/navbar";
 import "./Landingpage.css";
-import svg from "../../sources/images/codethinking.svg";
-import svg2 from "../../sources/images/Coding _Flatline.svg";
-import svg3 from "../../sources/images/img2.svg";
+// import svg from "../../sources/images/codethinking.svg";
+// import svg2 from "../../sources/images/Coding _Flatline.svg";
+import svg from "../../sources/images/img7.svg";
 
 export default function Landingpage() {
   return (
@@ -16,7 +16,7 @@ export default function Landingpage() {
       <Navbar />
       {/* img background */}
       <div className="img-container">
-        <img src={svg2} alt="not found" />
+        <img src={svg} alt="not found" />
       </div>
       {/* hero*/}
       <Hero />

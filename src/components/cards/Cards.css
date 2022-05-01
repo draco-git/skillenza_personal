@@ -13,12 +13,12 @@
 }
 
 .card-active {
-  color: #b92022;
+  color: #250b63;
 }
 
 .card-title {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   margin: 30px 0;
   font-family: "Arvo", serif;
 }
@@ -31,9 +31,10 @@
 .card-button > button {
   padding: 10px 30px;
   background: white;
-  border: 2px solid #b92022;
+  border: 2px solid #250b63;
   border-radius: 3px;
   margin: 20px 0px;
+  font-weight: 600;
   color: black;
   font-family: "Montserrat";
 }
@@ -44,14 +45,15 @@
   border-radius: 3px;
   margin: 20px 0px;
   font-family: "Montserrat";
-  background: #b92022;
+  background: #250b63;
   color: white;
+  font-weight: 700;
   cursor: pointer;
 }
 
 .card-button > button:hover,
 .card-button-active > button:hover {
-  box-shadow: 0 0 2px #b92022;
+  box-shadow: 0 0 2px #250b63;
 }
 
 .card-button > button:focus,
