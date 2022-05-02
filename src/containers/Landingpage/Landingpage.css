@@ -32,8 +32,9 @@
 }
 img {
   grid-column: 2 / 3;
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
+  margin-bottom: 250px;
   /* justify-self: center; */
   /* transform: scale(1.5) translateY(-80px); */
   object-fit: contain;
