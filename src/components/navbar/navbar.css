@@ -33,6 +33,12 @@
   cursor: pointer;
   font-weight: 700;
   color: white;
+  transition-duration: 0.3s;
+}
+
+.nav-buttons > button:nth-child(2):hover {
+  box-shadow: 0 0 3px #250b63; 
+  transition-duration: 0.2s;
 }
 
 .nav-buttons > button:nth-child(2) {
@@ -43,7 +49,8 @@
 }
 
 .nav-buttons > button:hover {
-  box-shadow: 0 0 3px #250b63;
+  box-shadow: 0 0 10px #250b63;
+  transition-duration: 0.3s;
 }
 
 .nav-buttons > button:focus {
