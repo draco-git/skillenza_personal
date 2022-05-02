@@ -19,8 +19,8 @@ export default function Card(props) {
     >
       <div className={"card-title " + active}>{props.title}</div>
       <div className="card-info">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. A in
-        exercitationem voluptatibus atque!
+        Engage your employees and foster a culture of innovation to impart
+        corporate culture, build teamwork and collaboration skills.
       </div>
       <div className={btnactive}>
         <button>{props.btn}</button>
