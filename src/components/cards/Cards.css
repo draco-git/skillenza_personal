@@ -41,14 +41,14 @@
 }
 
 .card-button-active > button {
-  padding: 11px 31px;
+  padding: 12px 32px;
   border: none;
   border-radius: 3px;
   margin: 20px 0px;
   font-family: "Montserrat";
   background: #250b63;
   color: white;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   transition-duration: 0.5s;
 }

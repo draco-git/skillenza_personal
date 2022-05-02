@@ -6,7 +6,7 @@ export default function Hero() {
     <div>
       <header className="hero">
         <p className="hero-title">
-          Overcome <span id="ipad">yourself</span>
+          hey <span id="ipad">welcome</span>
         </p>
         <p className="hero-title-caption">
           A route to change and overcome yourself
