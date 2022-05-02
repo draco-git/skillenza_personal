@@ -1,11 +1,11 @@
 import React from "react";
 import "./navbar.css";
-
+import png from "../../sources/images/logo.png";
 export default function navbar() {
   return (
     <div className="nav-grid-container">
-      <div className="nav-logo">
-        <i class="fa-solid fa-play">LOGO</i>
+      <div className="nav-logo" >
+        <img src={png} className="nav-logo-img" alt="not found" />
       </div>
 
       <div className="nav-buttons">

@@ -30,7 +30,7 @@
   justify-items: center;
   align-items: center;
 }
-img {
+.imgclass {
   grid-column: 2 / 3;
   height: 70%;
   width: 80%;
@@ -54,7 +54,7 @@ img {
     z-index: -19;
   }
 
-  img {
+  .imgclass {
     transform: translateY(100px);
   }
 }
@@ -65,7 +65,7 @@ img {
     margin: auto 30px;
   }
 
-  img {
+  .imgclass {
     visibility: hidden;
   }
 }

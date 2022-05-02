@@ -16,7 +16,7 @@ export default function Landingpage() {
       <Navbar />
       {/* img background */}
       <div className="img-container">
-        <img src={svg} alt="not found" />
+        <img  className="imgclass" src={svg} alt="not found" />
       </div>
       {/* hero*/}
       <Hero />
