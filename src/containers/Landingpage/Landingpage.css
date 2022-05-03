@@ -1,14 +1,15 @@
 .bg-container {
-  position: fixed;
+  position: relative;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: auto;
   z-index: -222;
-  background: linear-gradient(
-    90deg,
-    rgb(192, 227, 245, 0.3),
-    rgb(192, 227, 245, 0.3)
-  );
+  
+}
+
+.bg{
+  height: 1500px;
+  background-color: rgb(192, 227, 245, 0.3);
 }
 
 .card-grid-container {
@@ -68,4 +69,10 @@
   .imgclass {
     visibility: hidden;
   }
+  
+  .container{
+    height: 700px;
+    margin-top: 40px;
+  }
+
 }

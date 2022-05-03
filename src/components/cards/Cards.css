@@ -10,6 +10,7 @@
   font-family: "Jost", sans-serif;
   box-shadow: 0 0 10px rgb(192, 227, 245, 1);
   background: white;
+  z-index: 10;
 }
 
 .card-active {
@@ -37,7 +38,7 @@
   font-weight: 600;
   color: black;
   font-family: "Montserrat";
-  transition-duration: 0.5s;
+  transition-duration: 0.4s;
 }
 
 .card-button-active > button {
@@ -50,15 +51,17 @@
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition-duration: 0.5s;
+  transition-duration: 0.4s;
 }
 
 .card-button > button:hover,
 .card-button-active > button:hover {
-  box-shadow: 0 0 2px #250b63;
+  box-shadow: 0 0 10px #250b63;
+  transform: scale(1.1);
+  transition-duration: 0.4s;
 }
 
-.card-button > button:focus,
+/* .card-button > button:focus,
 .card-button-active > button:focus {
   outline: none !important;
-}
+} */
