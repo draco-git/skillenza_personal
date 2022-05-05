@@ -11,15 +11,15 @@ export default function Signup(props) {
             if (!filter.test(email.value)) {
             warning.textContent="invalid Email"
             warning.style.color="red"
-            email.style.background="red"
-            email.style.color="white"
+            email.style.border="2px solid red"
+            
             return false;
             }
             warning.style.color="green"
             warning.innerHTML="valid Email"
             setTimeout(() => warning.innerHTML="", 2000);
             
-            email.style.background="green"
+            email.style.border="2px solid green"
             
            return true
         }
@@ -31,14 +31,13 @@ export default function Signup(props) {
             if (!filter.test(email.value)) {
             warning.textContent="invalid firstname"
             warning.style.color="red"
-            email.style.background="red"
-            email.style.color="white"
+            email.style.border="2px solid red"
             return false;
             }
             warning.style.color="green"
             warning.innerHTML="valid fname"
             setTimeout(() => warning.innerHTML="", 2000);
-            email.style.background="green"
+            email.style.border="2px solid green"
             
            return true
         }
@@ -50,14 +49,13 @@ export default function Signup(props) {
             if (!filter.test(email.value)) {
             warning.textContent="invalid lastname"
             warning.style.color="red"
-            email.style.background="red"
-            email.style.color="white"
+            email.style.border="2px solid red"
             return false;
             }
             warning.style.color="green"
             warning.innerHTML="valid lastname"
             setTimeout(() => warning.innerHTML="", 2000);
-            email.style.background="green"
+            email.style.border="2px solid green"
            return true
         }
         function checkNumber() {
@@ -68,15 +66,13 @@ export default function Signup(props) {
             if (!filter.test(email.value)) {
             warning.textContent="invalid number"
             warning.style.color="red"
-            email.style.background="red"
-            email.style.color="white"
+            email.style.border="2px solid red"
             return false;
             }
             warning.style.color="green"
             warning.innerHTML="valid number"
             setTimeout(() => warning.innerHTML="", 2000);
-            email.style.background="green"
-            email.style.color="white"
+            email.style.border="2px solid green"
            return true
         }
         function checkform(){
@@ -88,10 +84,11 @@ export default function Signup(props) {
       }
 
   return (
-    <div className="container" style={{height:"930px"}}>
+    <div className="container" style={{height:""}}>
     <div className='gradientt'>
     <div className="bg-img">
       <img src={loginlogo} className="bg-img-shadow"/>
+      
     </div>
     <div className="content">
     <div id="eleonsignup">
@@ -150,7 +147,7 @@ export default function Signup(props) {
         <center>
           <p>
             Already on WiseCrack?
-            <button className="transback" onClick={()=>props.handler()}>
+            <button className="transback" onClick={()=>props.fn()}>
               sign in
             </button>
           </p>

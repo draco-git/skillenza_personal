@@ -11,6 +11,23 @@
   height: 1500px;
   background-color: rgb(192, 227, 245, 0.3);
 }
+.anim{
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards;
+}
+  
+@keyframes fadeInAnimation {
+  0% {
+        opacity: 0;
+        transform:translateX(-200px);
+    }
+    100% {
+        opacity: 1;
+        
+     }
+}
+
 
 .card-grid-container {
   margin-left: 70px;
@@ -39,7 +56,9 @@
   /* justify-self: center; */
   /* transform: scale(1.5) translateY(-80px); */
   object-fit: contain;
-  opacity: 0.8;
+  opacity: 0.9;
+  
+
 }
 @media (max-width: 900px) {
   .card-grid-container {
@@ -71,7 +90,6 @@
   }
   
   .container{
-    height: 700px;
     margin-top: 40px;
   }
 
