@@ -2,8 +2,7 @@ import React from 'react';
 import './styles.css';
 import logo from '../../sources/images/logo.png'
 import loginlogo from '../../sources/images/loginicon1.svg'
-import Forgot from './Forgot';
-export default function Login(props) {
+export default function Forgot(props) {
   function checkPassword1(){
     var pass=document.getElementById("pass")
         if (pass.value.length<8){
@@ -55,15 +54,15 @@ export default function Login(props) {
           <center>
           <form>
           {/* <label for="email">Enter email</label> */}
-          <input type="email" name="email" placeholder="Email" id="txtEmail1" onInput={checkEmail1}/>
+          <input type="email" name="email" placeholder="Email or Mobile" id="txtEmail1" onInput={checkEmail1}/>
           {/* <label for="password">Enter password</label> */}
-          <input type="password" name="password" placeholder="********" id="pass" onInput={checkPassword1}/>
+          {/* <input type="password" name="password" placeholder="********" id="pass" onInput={checkPassword1}/> */}
          </form>
          <br />
-         <button id="signbutton" onClick={checkform}>sign in</button>
+         <button id="signbutton" onClick={checkform}>continue to recover</button>
         <div id="signin" style={{display:'block'}}> <center>
           <br />
-            <button className='Forgot' style={{display:'block'}} onClick={()=>props.forgotfn()}>Forgot password?</button>
+            {/* <a href="#" style={{display:'block'}}>Forgot password?</a> */}
          
         <p>New to WiseCrack? <button className="transback" onClick={()=>props.fn()}>Sign up now</button></p>
         <img

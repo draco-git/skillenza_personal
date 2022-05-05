@@ -4,6 +4,7 @@ import Hero from "../../components/hero/Hero";
 import Navbar from "../../components/navbar/navbar";
 import Login from "../loginandsignup/Login";
 import Signup from "../loginandsignup/Signup";
+import Forgot from "../loginandsignup/Forgot";
 import "./Landingpage.css";
 // import svg from "../../sources/images/codethinking.svg";
 // import svg2 from "../../sources/images/Coding _Flatline.svg";
@@ -23,26 +24,29 @@ export default function Landingpage() {
       setPage("home")
 
     }
+    function handleForgot(){
+      setPage('forgot')
+    }
 
     
     let division;
 
     if (page==="login"){
       division=<div className="signuporlogin" >
-      <Login />
+      <Login fn={handleSignup} forgotfn={handleForgot}/>
       <br />
       <br /><br /><br /><br /><br /><br /> 
       </div>; 
     }
     if (page==="signup"){
       division=<div className="signuporlogin" >
-      <Signup />
+      <Signup fn={handleLogin}/>
       <br />
       <br /><br /><br /><br /><br /><br /> 
       </div>;
     }
     if(page==="home"){
-      division=<div style={{height:"100vh"}}>
+      division=<div className="anim" style={{height:"100vh"}}>
       <div className="img-container">
         <img  className="imgclass" src={svg} alt="not found" />
       </div>
@@ -55,6 +59,13 @@ export default function Landingpage() {
         <Card title="For trainers" btn="Grade up" />
       </div>
       </div> ;
+    }
+    if(page=='forgot'){
+      division=division=<div className="signuporlogin" >
+      <Forgot fn={handleSignup}/>
+      <br />
+      <br /><br /><br /><br /><br /><br /> 
+      </div>; 
     }
 
 

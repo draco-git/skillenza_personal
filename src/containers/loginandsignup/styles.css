@@ -3,11 +3,9 @@ span{
     font-size: 10px;
   }
   .gradientt{
-    background: linear-gradient(to top,white 55%,transparent);
+    background: linear-gradient(to top,rgb(255, 255, 255,.7) 55%,transparent);
   }
-  .bg-img-shadow{
-      filter:drop-shadow(0 0 2px black);
-  }
+  
   .signuporlogin{
     position: relative;
     display: flex;
@@ -18,22 +16,25 @@ span{
   }
   
   .container{
-    margin-top: 90px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     width:40vw;
     max-width: 420px;
     min-width: 300px;
-    min-height: 300px;
-    max-height: 930px;
+    height: auto;
     border-radius: 20px;
     box-shadow: 0 0px 20px rgb(37, 11, 96,0.1);
     box-sizing: border-box;
     overflow:hidden;
     transition-duration: 0.7s;
     transform: scale(1.05);
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     
   }
+  
   
   .content{
     position: relative;
@@ -78,7 +79,8 @@ span{
     color: black;
     padding: 0 15px;
     border-radius: 4px;
-    border: 0.3px solid black;
+    box-shadow: inset 0 0 0.4px #250b63;
+    border: 0.1px solid black;
     font-family: 'Montserrat', sans-serif;
   }
   #signbutton{
@@ -109,7 +111,6 @@ span{
     transition-duration: 0.3s;
   }
   .transback:hover{
-    transform: scale(1.05);
     color:#5573a5;
     cursor: pointer;
     transition-duration: 0.3s;
@@ -118,5 +119,16 @@ span{
       display: flex;
       align-items: center;
       justify-content: center;
+  }
+  .Forgot{
+    background-color: transparent;
+    color: #ff1100;
+    transition-duration: 0.3s;
+    padding: 0px 0px;
+  }
+  .Forgot:hover{
+    color:rgb(247, 95, 84);
+    cursor: pointer;
+    transition-duration: 0.3s;
   }
   
