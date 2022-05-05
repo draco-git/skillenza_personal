@@ -33,39 +33,39 @@ export default function Landingpage() {
 
     if (page==="login"){
       division=<div className="signuporlogin" >
-      <Login fn={handleSignup} forgotfn={handleForgot}/>
-      <br />
-      <br /><br /><br /><br /><br /><br /> 
-      </div>; 
+                <Login fn={handleSignup} forgotfn={handleForgot}/>
+                <br />
+                <br /><br /><br /><br /><br /><br /> 
+                </div>; 
     }
     if (page==="signup"){
       division=<div className="signuporlogin" >
-      <Signup fn={handleLogin}/>
-      <br />
-      <br /><br /><br /><br /><br /><br /> 
-      </div>;
+              <Signup fn={handleLogin}/>
+              <br />
+              <br /><br /><br /><br /><br /><br /> 
+              </div>;
     }
     if(page==="home"){
       division=<div className="anim" style={{height:"100vh"}}>
-      <div className="img-container">
-        <img  className="imgclass" src={svg} alt="not found" />
-      </div>
-      
-      <Hero />
-      
+              <div className="img-container">
+                <img  className="imgclass" src={svg} alt="not found" />
+              </div>
+              
+              <Hero />
+              
 
-      <div className="card-grid-container">
-        <Card title="For developers" btn="Start" />
-        <Card title="For trainers" btn="Grade up" />
-      </div>
-      </div> ;
+              <div className="card-grid-container">
+                <Card title="For developers" btn="Start" />
+                <Card title="For trainers" btn="Grade up" />
+              </div>
+              </div> ;
     }
     if(page=='forgot'){
       division=division=<div className="signuporlogin" >
-      <Forgot fn={handleSignup}/>
-      <br />
-      <br /><br /><br /><br /><br /><br /> 
-      </div>; 
+              <Forgot fn={handleSignup}/>
+              <br />
+              <br /><br /><br /><br /><br /><br /> 
+              </div>; 
     }
 
 

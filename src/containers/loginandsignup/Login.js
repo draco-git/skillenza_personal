@@ -35,7 +35,7 @@ export default function Login(props) {
         alert("email is wrong ")
       }
       if(!checkPassword1()){
-        alert("password is wrong")
+        alert("password is Loginwrong")
       }
 
     }
