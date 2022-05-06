@@ -1,85 +1,94 @@
-import React from 'react';
-import './styles.css';
-import logo from '../../sources/images/logo.png'
-import loginlogo from '../../sources/images/loginicon1.svg'
-import Forgot from './Forgot';
+import React from "react";
+import "./styles.css";
+import logo from "../../sources/images/logo.png";
+import loginlogo from "../../sources/images/loginicon1.svg";
+import Forgot from "./Forgot";
 export default function Login(props) {
-  function checkPassword1(){
-    var pass=document.getElementById("pass")
-        if (pass.value.length<8){
-            //alert("no text found in password")
-            pass.style.border="2px solid red"
-            return false
-        }
-        pass.style.border="2px solid green"
-        return true
-}
-  function checkEmail1(){
-    var email = document.getElementById('txtEmail1');
-    var filter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!filter.test(email.value)) {
-    //alert('Please provide a valid email address');
-    email.style.border="2px solid red";
-    return false;
+  function checkPassword1() {
+    var pass = document.getElementById("pass");
+    if (pass.value.length < 8) {
+      //alert("no text found in password")
+      pass.style.border = "2px solid red";
+      return false;
     }
-    email.style.border="2px solid green"
-    return true
+    pass.style.border = "2px solid green";
+    return true;
   }
-  function checkform(){
-           
-    if(checkEmail1() && checkPassword1()){
-        alert("validated successfully proceed to login")
+  function checkEmail1() {
+    var email = document.getElementById("txtEmail1");
+    var filter =
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!filter.test(email.value)) {
+      //alert('Please provide a valid email address');
+      email.style.border = "2px solid red";
+      return false;
     }
-    else{
-      if(!checkEmail1()){
-        alert("email is wrong ")
+    email.style.border = "2px solid green";
+    return true;
+  }
+  function checkform() {
+    if (checkEmail1() && checkPassword1()) {
+      alert("validated successfully proceed to login");
+    } else {
+      if (!checkEmail1()) {
+        alert("email is wrong ");
       }
-      if(!checkPassword1()){
-        alert("password is Loginwrong")
+      if (!checkPassword1()) {
+        alert("password is Loginwrong");
       }
-
     }
-    
-
-}
-
+  }
 
   return (
-    <div className="signuporlogin" >
-    <div className="container">
-      <div className='gradientt'>
-    <div className="bg-img">
-      <img src={loginlogo} className="bg-img-shadow"/>
-    </div>
-    <div className="content">
-        <div id="eleonsignin">
-          <center>
-          <form>
-          {/* <h2>Login</h2> */}
-          {/* <label for="email">Enter email</label> */}
-          <input type="email" name="email" placeholder="Email" id="txtEmail1" onInput={checkEmail1}/>
-          {/* <label for="password">Enter password</label> */}
-          <input type="password" name="password" placeholder="********" id="pass" onInput={checkPassword1}/>
-         </form>
-         <br />
-         <button id="signbutton" onClick={checkform}>sign in</button>
-        <div id="signin" style={{display:'block'}}> <center>
-          <br />
-            <button className='Forgot' style={{display:'block'}} onClick={()=>props.forgotfn()}>Forgot password?</button>
-         
-        <p>New to WiseCrack? <button className="transback" onClick={()=>props.fn()}>Sign up now</button></p>
-        <img
-            src={logo}
-            width="50%"
-          />
-          </center>
+    <div className="signuporlogin">
+      <div className="container">
+        <div className="gradientt">
+          <div className="bg-img">
+            <img src={loginlogo} className="bg-img-shadow" />
           </div>
-</center>
+          <div className="content">
+            <div id="eleonsignin">
+              <center>
+                <form>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    id="txtEmail1"
+                    onInput={checkEmail1}
+                  />
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder="********"
+                    id="pass"
+                    onInput={checkPassword1}
+                  />
+                </form>
+                <br />
+                <button id="signbutton" onClick={checkform}>
+                  sign in
+                </button>
+                <div id="signin" style={{ display: "block" }}>
+                  {" "}
+                  <center>
+                    <br />
+                    <button className="Forgot" style={{ display: "block" }}>
+                      Forgot password?
+                    </button>
+
+                    <p>
+                      New to WiseCrack?{" "}
+                      <button className="transback">Sign up now</button>
+                    </p>
+                    <img src={logo} width="50%" />
+                  </center>
+                </div>
+              </center>
+            </div>
+          </div>
         </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        
-        );
+      </div>
+    </div>
+  );
 }

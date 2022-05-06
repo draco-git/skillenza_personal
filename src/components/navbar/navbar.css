@@ -1,22 +1,15 @@
 .nav-grid-container {
   display: grid;
+  gap: 1.5rem;
   grid-template-columns: [logoo] 1fr [links] 3fr;
-  grid-template-rows:100px;
+  grid-template-rows: 100px;
   /* justify-items: center; */
   align-items: center;
+  /* background-color: white; */
   position: sticky;
-  background-color: rgb(192, 227, 245,0.3);
   top: 0;
-  z-index: 2000;
   /* border-bottom: 1px solid black; */
 }
-.navbar{
-  position: sticky;
-  background-color: white;
-  top: 0;
-  z-index: 100;
-}
-
 
 .nav-logo {
   margin-top: 20px;
@@ -24,15 +17,8 @@
   /* align-self: center; */
   height: 100px;
 }
-.nav-logo-img{
+.nav-logo-img {
   height: 100%;
-  transition-duration: 0.3s;
-  
-}
-.nav-logo-img:hover{
-  transform: scale(1.05);
-  cursor: pointer;
-  transition-duration: 0.3s;
 }
 .nav-buttons {
   display: flex;
@@ -40,7 +26,7 @@
   justify-content: flex-end;
 }
 
-.nav-buttons > button {
+.button {
   padding: 10px 30px;
   background: #250b63;
   border: none;
@@ -54,25 +40,25 @@
   transition-duration: 0.3s;
 }
 
-.nav-buttons > button:nth-child(2):hover {
-  box-shadow: 0 0 3px #250b63; 
+#nav-signup-button:hover {
+  box-shadow: 0 0 3px #250b63;
   transition-duration: 0.2s;
 }
 
-.nav-buttons > button:nth-child(2) {
+#nav-signup-button {
   margin-right: 100px;
   background: transparent;
   border: 2px solid #250b63;
   color: black;
 }
 
-.nav-buttons > button:hover {
+.button:hover {
   box-shadow: 0 0 10px #250b63;
   transform: scale(1.08);
   transition-duration: 0.3s;
 }
 
-.nav-buttons > button:focus {
+.button:focus {
   outline: none;
 }
 
@@ -81,54 +67,45 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: rgb(192, 227, 245, 0.3);
     border-bottom: 1px solid rgb(241, 238, 238);
-    position: sticky;
-    
+    background: white;
   }
 
   .nav-logo {
     margin-top: 30px;
     margin-left: 0px;
-    
   }
-  
-  
 
   .nav-buttons {
     justify-content: center;
     margin-bottom: 20px;
   }
 
-  .nav-buttons > button:nth-child(2) {
+  .button:nth-child(2) {
     margin-right: 0;
   }
 }
 
-@media (max-width: 900px )and (min-width:500px) {
+@media (max-width: 900px) and (min-width: 500px) {
   .nav-grid-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-bottom: 1px solid rgb(241, 238, 238);
-    background: rgb(192, 227, 245, 0.3);
-    position: sticky;
-    
+    background: white;
   }
 
   .nav-logo {
     margin-top: 30px;
-    margin-left: 0px
+    margin-left: 0px;
   }
-  
-  
 
   .nav-buttons {
     justify-content: center;
     margin-bottom: 20px;
   }
 
-  .nav-buttons > button:nth-child(2) {
+  .button:nth-child(2) {
     margin-right: 0;
   }
 }

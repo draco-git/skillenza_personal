@@ -1,20 +1,30 @@
 import React from "react";
 import "./navbar.css";
 import png from "../../sources/images/logo.png";
-// import {Outlet,Link} from "react-router-dom";
-export default function navbar(props) {
+import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
+export default function navbar() {
   return (
-    <div className="navbar">
     <div className="nav-grid-container">
-      <div className="nav-logo" >
-        <img src={png} className="nav-logo-img" alt="not found" onClick={()=>props.homefn()}/>
+      <div className="nav-logo">
+        <Link to="/home">
+          <img src={png} className="nav-logo-img" alt="not found" />
+        </Link>
       </div>
 
       <div className="nav-buttons">
-        <button id="nav-login-button" onClick={()=>props.logfn()}>Login</button>
-        <button id="nav-signup-button" onClick={()=>props.signupfn()}>Signup</button>
+        <Link to="/login">
+          <button id="nav-login-button" className="button">
+            Login
+          </button>
+        </Link>
+        <Link to="/signup">
+          <button id="nav-signup-button" className="button">
+            Signup
+          </button>
+        </Link>
+
+        {/* <button id="nav-signup-button">Signup</button> */}
       </div>
-    </div>
     </div>
   );
 }
