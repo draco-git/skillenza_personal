@@ -44,6 +44,7 @@ export default function Forgot(props) {
 
 
   return (
+    <div className="signuporlogin" >
     <div className="container">
       <div className='gradientt'>
     <div className="bg-img">
@@ -72,6 +73,7 @@ export default function Forgot(props) {
           </center>
           </div>
 </center>
+        </div>
         </div>
         </div>
         </div>

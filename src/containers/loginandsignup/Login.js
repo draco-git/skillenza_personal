@@ -45,6 +45,7 @@ export default function Login(props) {
 
 
   return (
+    <div className="signuporlogin" >
     <div className="container">
       <div className='gradientt'>
     <div className="bg-img">
@@ -54,6 +55,7 @@ export default function Login(props) {
         <div id="eleonsignin">
           <center>
           <form>
+          {/* <h2>Login</h2> */}
           {/* <label for="email">Enter email</label> */}
           <input type="email" name="email" placeholder="Email" id="txtEmail1" onInput={checkEmail1}/>
           {/* <label for="password">Enter password</label> */}
@@ -77,7 +79,7 @@ export default function Login(props) {
         </div>
         </div>
         </div>
-      
+        </div>
         
         );
 }

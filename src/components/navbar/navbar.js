@@ -1,6 +1,7 @@
 import React from "react";
 import "./navbar.css";
 import png from "../../sources/images/logo.png";
+// import {Outlet,Link} from "react-router-dom";
 export default function navbar(props) {
   return (
     <div className="navbar">

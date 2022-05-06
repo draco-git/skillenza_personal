@@ -6,37 +6,37 @@ export default function Signup(props) {
       function checkEmail() { 
             //alert("entered")
             var email = document.getElementById('txtEmail');
-            var warning=document.getElementById('mailwarning');
+            // var warning=document.getElementById('mailwarning');
             var filter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             if (!filter.test(email.value)) {
-            warning.textContent="invalid Email"
-            warning.style.color="red"
+            // warning.textContent="invalid Email"
+            // warning.style.color="red"
             email.style.border="2px solid red"
             
             return false;
             }
-            warning.style.color="green"
-            warning.innerHTML="valid Email"
-            setTimeout(() => warning.innerHTML="", 2000);
+            // warning.style.color="green"
+            // warning.innerHTML="valid Email"
+            // setTimeout(() => warning.innerHTML="", 2000);
             
             email.style.border="2px solid green"
             
            return true
         }
         function checkFName() {
-            //alert("entered")
+            // alert("entered")
             var email = document.getElementById('txtfname');
-            var warning=document.getElementById('fnamewarning');
+            // var warning=document.getElementById('fnamewarning');
             var filter = /^[a-zA-Z]{1,}$/;
             if (!filter.test(email.value)) {
-            warning.textContent="invalid firstname"
-            warning.style.color="red"
+            // warning.textContent="invalid firstname"
+            // warning.style.color="red"
             email.style.border="2px solid red"
             return false;
             }
-            warning.style.color="green"
-            warning.innerHTML="valid fname"
-            setTimeout(() => warning.innerHTML="", 2000);
+            // warning.style.color="green"
+            // warning.innerHTML="valid fname"
+            // setTimeout(() => warning.innerHTML="", 2000);
             email.style.border="2px solid green"
             
            return true
@@ -84,6 +84,7 @@ export default function Signup(props) {
       }
 
   return (
+    <div className="signuporlogin" >
     <div className="container" style={{height:""}}>
     <div className='gradientt'>
     <div className="bg-img">
@@ -103,26 +104,26 @@ export default function Signup(props) {
           onInput={checkEmail}
           //value="mail@mail-domain.com"
         />
-        <span id="mailwarning"></span>
+        {/* <span id="mailwarning"></span> */}
         <input
           type="text"
           name="first"
-          placeholder="your first name here"
+          placeholder="your User name here"
           id="txtfname"
           onInput={checkFName}
           //value="firstname"
           title="no special characters and numbers"
         />
-        <span id="fnamewarning"></span>
-        <input
+        {/* <span id="fnamewarning"></span> */}
+        {/* <input
           type="text"
           name="last"
           placeholder="your last name here"
           id="txtlname"
           onInput={checkLName}
           //value="lastname"
-        />
-        <span id="lnamewarning"></span>
+        /> */}
+        {/* <span id="lnamewarning"></span>
         <input
           type="text"
           name="mobile"
@@ -137,11 +138,11 @@ export default function Signup(props) {
           type="password"
           name="cofirmpassword"
           placeholder="confirm password"
-        />
+        /> */}
         </center>
       </form>
       <br />
-      <button id="signbutton" onClick={checkform}>signup
+      <button id="signbutton" onClick={checkform}>Next
       </button>
       <div id="signup">
         <center>
@@ -161,6 +162,7 @@ export default function Signup(props) {
         
       </div>
       </center>
+    </div>
     </div>
     </div>
     </div>
