@@ -61,9 +61,11 @@ span{
     opacity: 0.8;
   }
   form{
-    width: 80%;
+    width: 70%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   
   }
   form input,button{
@@ -75,11 +77,11 @@ span{
   }
   form input{
     font-size: 18px;
-    width:100%;
+    width:250px;
     margin: 10px -15px;
     background: white;
     color: black;
-    padding: 0 15px;
+    padding:0 15px;
     border-radius: 4px;
     box-shadow: inset 0 0 0.4px #250b63;
     border: 0.1px solid black;
@@ -120,9 +122,12 @@ span{
   }
   #eleonsignin{
       display: flex;
+      width: auto;
+      /* margin-top: -30px; */
       align-items: center;
       justify-content: center;
   }
+  
   .Forgot{
     background-color: transparent;
     color: #ff1100;

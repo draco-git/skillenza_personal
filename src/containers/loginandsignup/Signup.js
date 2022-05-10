@@ -1,8 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 import "./styles.css";
 import logo from "../../sources/images/logo.png";
 import loginlogo from "../../sources/images/loginicon.svg";
+import { Link } from "react-router-dom";
 export default function Signup(props) {
+  const [email,setEmail]=useState("")
+  const [name,setName]=useState("")
+  const [password,setPassword]=useState("")
+  const [next,setNext]=useState("next")
+  function handleSignup(){
+
+  }
   function checkEmail() {
     //alert("entered")
     var email = document.getElementById("txtEmail");
@@ -21,6 +29,7 @@ export default function Signup(props) {
     // setTimeout(() => warning.innerHTML="", 2000);
 
     email.style.border = "2px solid green";
+    setEmail(email.value)
 
     return true;
   }
@@ -39,6 +48,7 @@ export default function Signup(props) {
     // warning.innerHTML="valid fname"
     // setTimeout(() => warning.innerHTML="", 2000);
     email.style.border = "2px solid green";
+    setName(email.value)
 
     return true;
   }
@@ -76,10 +86,76 @@ export default function Signup(props) {
     email.style.border = "2px solid green";
     return true;
   }
-  function checkform() {
-    if (checkEmail() && checkFName() && checkLName() && checkNumber()) {
-      alert("succesfully validated");
+  function checkPassword(){
+    var pass = document.getElementById("pass");
+    var filter =/^(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{8,32}$/;
+
+    if (!filter.test(pass.value)) {
+      // warning.textContent="invalid firstname"
+      // warning.style.color="red"
+      pass.style.border = "2px solid red";
+      return false;
     }
+    // warning.style.color="green"
+    // warning.innerHTML="valid fname"
+    // setTimeout(() => warning.innerHTML="", 2000);
+    pass.style.border = "2px solid green";
+    setPassword("pass.value")
+
+    return true;
+
+
+  }
+  function checkPassword1(){
+    var pass1 = document.getElementById("cpass");
+    var pass = document.getElementById("pass");
+    
+
+    if (pass1.value!==pass.value) {
+      // warning.textContent="invalid firstname"
+      // warning.style.color="red"
+      pass1.style.border = "2px solid red";
+      return false;
+    }
+    // warning.style.color="green"
+    // warning.innerHTML="valid fname"
+    // setTimeout(() => warning.innerHTML="", 2000);
+    pass1.style.border = "2px solid green";
+
+    return true;
+
+
+  }
+  
+  function checkform() {
+    if (checkEmail() && checkFName()) {
+      //alert("succesfully validated proceed to enter password be careful no one watches you");
+      
+      if (next==="next"){
+        var pass1 = document.getElementById("cpass");
+        var pass = document.getElementById("pass");
+
+        pass1.style.display='block'
+        pass.style.display='block'
+        var email = document.getElementById("txtEmail");
+        var fname = document.getElementById("txtfname");
+        email.style.display='none'
+        fname.style.display='none'
+        var somebutt = document.getElementById("signbutton");
+        somebutt.innerHTML="signup";
+        setNext("signup")
+      }
+      else{
+        if (checkPassword1() && checkPassword()){
+          handleSignup();
+          
+  
+        }
+      }
+      
+    }
+    
+
   }
 
   return (
@@ -94,6 +170,7 @@ export default function Signup(props) {
               <center>
                 <form>
                   <center>
+                    <h3>Create Account</h3>
                     <input
                       type="email"
                       name="email"
@@ -110,6 +187,20 @@ export default function Signup(props) {
                       //value="firstname"
                       title="no special characters and numbers"
                     />
+                    <input 
+                    type='password'
+                    placeholder='password'
+                    id='pass'
+                    onInput={checkPassword}
+                    style={{display:'none'}}
+                    />
+                    <input 
+                    type='password'
+                    placeholder='confirm password'
+                    id='cpass'
+                    onInput={checkPassword1}
+                    style={{display:'none'}}
+                    />
                   </center>
                 </form>
                 <br />
@@ -120,7 +211,7 @@ export default function Signup(props) {
                   <center>
                     <p>
                       Already on WiseCrack?
-                      <button className="transback">sign in</button>
+                      <Link to="/login"><button className="transback">Sign in</button></Link>
                     </p>
 
                     <img src={logo} width="50%" height="" />

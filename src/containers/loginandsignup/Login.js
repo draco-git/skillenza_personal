@@ -3,6 +3,7 @@ import "./styles.css";
 import logo from "../../sources/images/logo.png";
 import loginlogo from "../../sources/images/loginicon1.svg";
 import Forgot from "./Forgot";
+import {Link }from 'react-router-dom'
 export default function Login(props) {
   function checkPassword1() {
     var pass = document.getElementById("pass");
@@ -50,6 +51,7 @@ export default function Login(props) {
             <div id="eleonsignin">
               <center>
                 <form>
+                  <h3>Login</h3>
                   <input
                     type="email"
                     name="email"
@@ -73,15 +75,16 @@ export default function Login(props) {
                   {" "}
                   <center>
                     <br />
-                    <button className="Forgot" style={{ display: "block" }}>
+                    <Link to='/forgot'><button className="Forgot" style={{ display: "block" }}>
                       Forgot password?
-                    </button>
+                    </button></Link>
 
                     <p>
-                      New to WiseCrack?{" "}
-                      <button className="transback">Sign up now</button>
+                      New to WiseCrack?
+                      <Link to="/signup"><button className="transback">Sign up now</button></Link>
+                      
                     </p>
-                    <img src={logo} width="50%" />
+                    {/* <img src={logo} width="50%" /> */}
                   </center>
                 </div>
               </center>

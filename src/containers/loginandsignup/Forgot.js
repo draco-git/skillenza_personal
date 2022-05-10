@@ -2,6 +2,7 @@ import React from 'react';
 import './styles.css';
 import logo from '../../sources/images/logo.png'
 import loginlogo from '../../sources/images/loginicon1.svg'
+import { Link } from 'react-router-dom';
 export default function Forgot(props) {
   function checkPassword1(){
     var pass=document.getElementById("pass")
@@ -54,18 +55,19 @@ export default function Forgot(props) {
         <div id="eleonsignin">
           <center>
           <form>
+          <h3>Forgot Password</h3>
           {/* <label for="email">Enter email</label> */}
           <input type="email" name="email" placeholder="Email or Mobile" id="txtEmail1" onInput={checkEmail1}/>
           {/* <label for="password">Enter password</label> */}
           {/* <input type="password" name="password" placeholder="********" id="pass" onInput={checkPassword1}/> */}
          </form>
          <br />
-         <button id="signbutton" onClick={checkform}>continue to recover</button>
+         <button id="signbutton" onClick={checkform}>Continue</button>
         <div id="signin" style={{display:'block'}}> <center>
           <br />
             {/* <a href="#" style={{display:'block'}}>Forgot password?</a> */}
          
-        <p>New to WiseCrack? <button className="transback" onClick={()=>props.fn()}>Sign up now</button></p>
+        <p>New to WiseCrack? <Link to='/signup'><button className="transback" onClick={()=>props.fn()}>Sign up now</button></Link></p>
         <img
             src={logo}
             width="50%"

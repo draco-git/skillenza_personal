@@ -7,16 +7,14 @@ import svg from "../../sources/images/img7.svg";
 export default function Home() {
   return (
     <div>
-      <div className="anim">
         <div className="img-container">
-          <img className="imgclass" src={svg} alt="not found" />
+          <img className="imgclass anim" src={svg} alt="not found" />
         </div>
         <Hero />
-        <div className="card-grid-container">
+        <div className="card-grid-container cardanim">
           <Card title="For developers" btn="Start" />
           <Card title="For trainers" btn="Grade up" />
         </div>
       </div>
-    </div>
   );
 }
