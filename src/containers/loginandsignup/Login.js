@@ -1,10 +1,34 @@
-import React from "react";
+import React,{useState}from "react";
 import "./styles.css";
 import logo from "../../sources/images/logo.png";
 import loginlogo from "../../sources/images/loginicon1.svg";
 import Forgot from "./Forgot";
 import {Link }from 'react-router-dom'
 export default function Login(props) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const submitHandler = async () => {
+    var data = {
+      email: email,
+      password: password,
+    };
+    data = JSON.stringify(data);
+    console.log(data);
+    await fetch("http://localhost:82/regis/log", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: data,
+    }).then(response => response.json())
+    .then(response => {
+    
+        alert(response)
+    
+    });
+  };
   function checkPassword1() {
     var pass = document.getElementById("pass");
     if (pass.value.length < 8) {
@@ -13,6 +37,7 @@ export default function Login(props) {
       return false;
     }
     pass.style.border = "2px solid green";
+    setPassword(pass.value)
     return true;
   }
   function checkEmail1() {
@@ -25,17 +50,18 @@ export default function Login(props) {
       return false;
     }
     email.style.border = "2px solid green";
+    setEmail(email.value)
     return true;
   }
   function checkform() {
     if (checkEmail1() && checkPassword1()) {
-      alert("validated successfully proceed to login");
+      submitHandler();
     } else {
       if (!checkEmail1()) {
         alert("email is wrong ");
       }
       if (!checkPassword1()) {
-        alert("password is Loginwrong");
+        alert("password is wrong");
       }
     }
   }

@@ -7,10 +7,32 @@ export default function Signup(props) {
   const [email,setEmail]=useState("")
   const [name,setName]=useState("")
   const [password,setPassword]=useState("")
+  const [number,setNumber]=useState("")
   const [next,setNext]=useState("next")
-  function handleSignup(){
-
-  }
+  const submitHandler = async () => {
+    // event.preventDefault();
+    var data = {
+      name:name,
+      email: email,
+      mobile: number,
+      password: password,
+    };
+    data = JSON.stringify(data);
+    console.log(data);
+    await fetch("http://localhost:82/regis/reg", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: data,
+    }).then(response => response.json())
+    .then(response => {
+    
+        alert(response)
+    
+    })
+  };
   function checkEmail() {
     //alert("entered")
     var email = document.getElementById("txtEmail");
@@ -24,9 +46,6 @@ export default function Signup(props) {
 
       return false;
     }
-    // warning.style.color="green"
-    // warning.innerHTML="valid Email"
-    // setTimeout(() => warning.innerHTML="", 2000);
 
     email.style.border = "2px solid green";
     setEmail(email.value)
@@ -71,19 +90,14 @@ export default function Signup(props) {
   }
   function checkNumber() {
     //alert("entered")
-    var email = document.getElementById("txtNum");
-    var warning = document.getElementById("numwarning");
+    var email = document.getElementById("number");
     var filter = /^(9|8|7|6)[0-9]{9}$/;
     if (!filter.test(email.value)) {
-      warning.textContent = "invalid number";
-      warning.style.color = "red";
       email.style.border = "2px solid red";
       return false;
     }
-    warning.style.color = "green";
-    warning.innerHTML = "valid number";
-    setTimeout(() => (warning.innerHTML = ""), 2000);
     email.style.border = "2px solid green";
+    setNumber(email.value)
     return true;
   }
   function checkPassword(){
@@ -100,7 +114,7 @@ export default function Signup(props) {
     // warning.innerHTML="valid fname"
     // setTimeout(() => warning.innerHTML="", 2000);
     pass.style.border = "2px solid green";
-    setPassword("pass.value")
+    setPassword(pass.value)
 
     return true;
 
@@ -128,26 +142,27 @@ export default function Signup(props) {
   }
   
   function checkform() {
-    if (checkEmail() && checkFName()) {
+    if (checkEmail() && checkFName() && checkNumber()) {
       //alert("succesfully validated proceed to enter password be careful no one watches you");
       
       if (next==="next"){
         var pass1 = document.getElementById("cpass");
         var pass = document.getElementById("pass");
-
         pass1.style.display='block'
         pass.style.display='block'
         var email = document.getElementById("txtEmail");
         var fname = document.getElementById("txtfname");
+        var num  = document.getElementById("number");
         email.style.display='none'
         fname.style.display='none'
+        num.style.display='none'
         var somebutt = document.getElementById("signbutton");
         somebutt.innerHTML="signup";
         setNext("signup")
       }
       else{
         if (checkPassword1() && checkPassword()){
-          handleSignup();
+          submitHandler();
           
   
         }
@@ -187,6 +202,14 @@ export default function Signup(props) {
                       //value="firstname"
                       title="no special characters and numbers"
                     />
+                    <input
+                      type='tel'
+                      name='number'
+                      placeholder='mobile number'
+                      id='number'
+                      onInput={checkNumber}
+                      maxLength='10'
+                    />
                     <input 
                     type='password'
                     placeholder='password'
@@ -214,7 +237,7 @@ export default function Signup(props) {
                       <Link to="/login"><button className="transback">Sign in</button></Link>
                     </p>
 
-                    <img src={logo} width="50%" height="" />
+                    {/* <img src={logo} width="50%" height="" /> */}
                   </center>
                 </div>
               </center>
